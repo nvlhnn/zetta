@@ -38,4 +38,7 @@ base url = "http://localhost:5000/api"
 | comment | put    | /comments/{commentId}        | update comment             |
 | comment | delete | /comments/{commentId}        | delete comment             |
 
-
+## exmaple for filter list article
+```
+http://localhost:5000/api/articles/?page={number}&sort={"oldest" or "newest"}&search={string}
+```
