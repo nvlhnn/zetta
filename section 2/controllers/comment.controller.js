@@ -110,7 +110,7 @@ class CommentController {
 
   static delete = async (req, res, next) => {
     try {
-      const deleted = await Comment.findByIdAndDelete(req.params.id);
+      await Comment.findByIdAndDelete(req.params.id);
 
       const response = setResponse(true, null);
       res.status(200).json(response);
