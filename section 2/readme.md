@@ -1,5 +1,5 @@
 
-# post comment api
+# article comment api
 ```
 base url = "http://localhost:5000/api"
 ```
