@@ -25,9 +25,6 @@ class ArticleController {
 
       const aggregation = [
         {
-          $limit: limit,
-        },
-        {
           $lookup: {
             from: "comments",
             localField: "comments",
@@ -66,6 +63,10 @@ class ArticleController {
       if (req.query.page) offset = (req.query.page - 1) * limit;
       aggregation.push({
         $skip: offset,
+      });
+
+      aggregation.push({
+        $limit: limit,
       });
 
       const article = await Article.aggregate(aggregation);
